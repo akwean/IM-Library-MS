@@ -92,3 +92,16 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (BookID, CategoryID);
 
+LOAD DATA LOCAL INFILE 'C:/Users/akwean/Downloads/csv data for database/loans.csv'
+INTO TABLE Loans
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+ESCAPED BY '\\'
+LINES TERMINATED BY '\n' 
+IGNORE 1 ROWS
+(BookID, MemberID, LoanDate, DueDate, ReturnDate, IssuedByUserID, ReceivedByUserID);
+
+
+
+
+
