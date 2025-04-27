@@ -1,3 +1,7 @@
+-- To set the limit to 100k
+set @@global.sql_select_limit=110000;
+
+
 -- Top 5 Most Borrowed Books
 SELECT 
     B.Title,
@@ -6,7 +10,8 @@ FROM Loans L
 JOIN Books B ON L.BookID = B.BookID
 GROUP BY L.BookID
 ORDER BY TimesBorrowed DESC
-LIMIT 5;
+LIMIT 110000;
+explain 
 
 -- How many books are borrowed each month?
 SELECT 
@@ -28,7 +33,7 @@ FROM Loans L
 JOIN Members M ON L.MemberID = M.MemberID
 GROUP BY M.MemberID, FullName, M.Email
 ORDER BY TotalBooksBorrowed DESC
-LIMIT 5;
+LIMIT 100000;
 
 -- Average Loan Duration Per Member
 SELECT 
